@@ -38,7 +38,7 @@ import org.springframework.transaction.annotation.Transactional;
  * TestContext Framework: </p> <ul> <li><strong>Spring IoC container caching</strong> which spares us unnecessary set up
  * time between test execution.</li> <li><strong>Dependency Injection</strong> of test fixture instances, meaning that
  * we don't need to perform application context lookups. See the use of {@link Autowired @Autowired} on the <code>{@link
- * AbstractclinicServiceTests#clinicService clinicService}</code> instance variable, which uses autowiring <em>by
+ * AbstractClinicServiceTests#clinicService clinicService}</code> instance variable, which uses autowiring <em>by
  * type</em>. <li><strong>Transaction management</strong>, meaning each test method is executed in its own transaction,
  * which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there
  * is no need for a teardown or cleanup script. <li> An {@link org.springframework.context.ApplicationContext
@@ -148,7 +148,7 @@ public abstract class AbstractClinicServiceTests {
 
 	@Test
 	@Transactional
-	public void sholdUpdatePetName() throws Exception {
+	public void shouldUpdatePetName() throws Exception {
 	    Pet pet7 = this.clinicService.findPetById(7);
 	    String oldName = pet7.getName();
 	    
